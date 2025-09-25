@@ -1,0 +1,70 @@
+{
+  "root": true,
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 100,
+    "indentWidth": 2
+  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "suspicious": {
+        "noImplicitAnyLet": "warn",
+        "noDuplicateObjectKeys": "warn",
+        "noTsIgnore": "error",
+        "noDebugger": "error"
+      },
+      "performance": {
+        "noDelete": "error"
+      },
+      "complexity": {
+        "noUselessSwitchCase": "warn",
+        "noUselessTypeConstraint": "warn"
+      },
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
+      },
+      "nursery": {
+        "noMisusedPromises": "error",
+        "noFloatingPromises": "error"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/turbo.json", "**/package.json"],
+      "json": {
+        "parser": {
+          "allowComments": true,
+          "allowTrailingCommas": true
+        }
+      }
+    },
+    {
+      "includes": ["apps/**/*.{tsx,ts}"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noImgElement": "error"
+          }
+        }
+      }
+    }
+  ],
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**/*",
+      "!**/.turbo/**/*",
+      "!**/.next/**/*",
+      "!**/node_modules/**/*",
+      "!**/dist/**/*",
+      "!**/build/**/*"
+    ]
+  }
+}
