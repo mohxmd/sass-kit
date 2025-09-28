@@ -3,14 +3,21 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "📦": "──────────────── Workspace Shortcuts ────────────────",
     "build": "turbo build",
     "dev": "turbo dev",
+    "web": "pnpm -F web",
+    "srv": "pnpm -F server",
+    "fnd": "pnpm -F @repo/foundation",
+    "✨": "──────────────── Hygiene ────────────────",
     "lint": "biome lint",
     "lint:fix": "biome lint --write .",
     "format": "biome format --write .",
     "format:check": "biome format .",
     "check": "biome check .",
-    "check:fix": "biome check --write ."
+    "check:fix": "biome check --write .",
+    "check-types": "turbo check-types",
+    "update:deps": "bash ./scripts/update-deps.sh"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.4",

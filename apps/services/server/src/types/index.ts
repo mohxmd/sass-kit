@@ -1,0 +1,12 @@
+export type SuccessResponse<T = void> = {
+  success: true;
+  message: string;
+} & (T extends void ? object : { data: T });
+
+export type ErrorResponse = {
+  success: false;
+  error: string;
+  isFormError?: boolean;
+};
+
+export type ApiResponse<T = void> = SuccessResponse<T> | ErrorResponse;
