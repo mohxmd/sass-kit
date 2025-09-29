@@ -1,31 +1,46 @@
-# shadcn/ui monorepo template
+# 🌱 sass-kit
 
-This template is for creating a monorepo with shadcn/ui.
+Minimal monorepo starter for building your next SaaS app.  
+Comes with **Next.js**, **Hono server**, and a shared **foundation** package for DB/auth/zod.
 
-## Usage
+---
 
-```bash
-pnpm dlx shadcn@latest init
-```
-
-## Adding components
-
-To add components to your app, run the following command at the root of your `web` app:
+## 📂 Structure
 
 ```bash
-pnpm dlx shadcn@latest add button -c apps/web
+.
+├── apps
+│   ├── web                 # Next.js app
+│   └── services            # backend services (Hono, Gateway, etc.)
+│       ├── server          # Hono server
+│       └── gateway         # placeholder
+├── packages
+│   ├── foundation          # auth, db, zod-schemas, queries
+│   └── ui                  # shared UI components
 ```
 
-This will place the ui components in the `packages/ui/src/components` directory.
+---
 
-## Tailwind
+## 🚀 Getting Started
 
-Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
-
-## Using components
-
-To use the components in your app, import them from the `ui` package.
-
-```tsx
-import { Button } from "@repo/ui/components/button"
+```bash
+pnpm install
+pnpm dev
 ```
+
+- `pnpm web` → work in the Next.js app
+- `pnpm srv` → work in the Hono server
+- `pnpm fnd` → work in foundation
+
+---
+
+## 🌌 Roadmap
+
+- [ ] Polar integration for payments 💸
+- [ ] TanStack SPA app
+- [ ] Expo mobile app
+- [ ] More backend services (orders, notifications, etc.)
+
+---
+
+💡 Just fork it, run it, and grow your SaaS.
